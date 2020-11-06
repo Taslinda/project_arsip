@@ -21,6 +21,11 @@ Route::get('/dashboard', function () {
     return view('layouts.master');
 });
 
+Route::get('/arsip', function () {
+    return view('arsip-pages.hotel');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
