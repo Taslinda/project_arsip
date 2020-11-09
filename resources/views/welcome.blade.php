@@ -16,7 +16,7 @@
         <div class="container my-auto text-center">
             <h1 class="mb-1" style="font-size: 70px;line-height: 68px;color: #002654;"><strong>Selamat Datang Di Sistem Informasi Arsip Berkas Pendataan</strong><br></h1><em style="font-size: 42px;line-height: 20px;font-weight: normal;color: #002654;"><br><strong>BADAN PENDAPATAN DAERAH KOTA MAKASSAR</strong><br><br></em>
             <a
-                class="btn btn-primary btn-xl js-scroll-trigger" role="button" href="#login">LOGIN</a>
+                class="btn btn-primary btn-xl js-scroll-trigger" role="button" href="/login">LOGIN</a>
                 <div class="overlay"></div>
         </div>
     </header>

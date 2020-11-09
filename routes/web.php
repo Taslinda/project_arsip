@@ -17,6 +17,48 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login', function() {
+    return view('login');
+});
+
+Route::get('/airtanah', function() {
+    return view('airtanah');
+});
+
+Route::get('/hiburan', function() {
+    return view('hiburan');
+});
+
+Route::get('/hotel', function() {
+    return view('hotel');
+});
+
+Route::get('/mineral', function() {
+    return view('mineral');
+});
+
+Route::get('/parkir', function() {
+    return view('parkir');
+});
+
+Route::get('/peneranganjalan', function() {
+    return view('peneranganjalan');
+});
+
+Route::get('/reklame', function() {
+    return view('reklame');
+});
+
+Route::get('/restoran', function() {
+    return view('restoran');
+});
+
+Route::get('/sarangburungwalet', function() {
+    return view('sarangburungwalet');
+});
+
+
+
 Route::get('/dashboard', function () {
     return view('layouts.master');
 });
