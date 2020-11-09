@@ -29,8 +29,12 @@ Route::get('/hiburan', function() {
     return view('hiburan');
 });
 
+/////////HOTEL///////////
 Route::get('/hotel', function() {
-    return view('hotel');
+    return view('arsip-pages.hotel');
+});
+Route::get('/add-hotel', function() {
+    return view('crud-hotel.add-hotel');
 });
 
 Route::get('/mineral', function() {
@@ -57,17 +61,14 @@ Route::get('/sarangburungwalet', function() {
     return view('sarangburungwalet');
 });
 
-
-
 Route::get('/dashboard', function () {
     return view('layouts.master');
-});
-
-Route::get('/arsip', function () {
-    return view('arsip-pages.hotel');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/upload', 'UploadController@upload');
+Route::post('/upload/proses', 'UploadController@proses_upload');
 
