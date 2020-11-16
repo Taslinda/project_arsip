@@ -21,12 +21,24 @@ Route::get('/login', function() {
     return view('login');
 });
 
-Route::get('/airtanah', function() {
-    return view('airtanah');
+Route::get('/dashboard', function () {
+    return view('layouts.master');
 });
 
+/////////AIR TANAH///////////
+Route::get('/airtanah', function() {
+    return view('arsip-pages.airtanah');
+});
+Route::get('/add-airtanah', function() {
+    return view('crud-airtanah.add-airtanah');
+});
+
+/////////HIBURAN///////////
 Route::get('/hiburan', function() {
-    return view('hiburan');
+    return view('arsip-pages.hiburan');
+});
+Route::get('/add-hiburan', function() {
+    return view('crud-hiburan.add-hiburan');
 });
 
 /////////HOTEL///////////
@@ -37,32 +49,52 @@ Route::get('/add-hotel', function() {
     return view('crud-hotel.add-hotel');
 });
 
+/////////MINERAL///////////
 Route::get('/mineral', function() {
-    return view('mineral');
+    return view('arsip-pages.mineral');
+});
+Route::get('/add-mineral', function() {
+    return view('crud-mineral.add-mineral');
 });
 
+/////////PARKIR///////////
 Route::get('/parkir', function() {
-    return view('parkir');
+    return view('arsip-pages.parkir');
+});
+Route::get('/add-parkir', function() {
+    return view('crud-parkir.add-parkir');
 });
 
+/////////PENERANGAN JALAN///////////
 Route::get('/peneranganjalan', function() {
-    return view('peneranganjalan');
+    return view('arsip-pages.peneranganjalan');
+});
+Route::get('/add-peneranganjalan', function() {
+    return view('crud-peneranganjalan.add-peneranganjalan');
 });
 
+/////////REKLAME///////////
 Route::get('/reklame', function() {
-    return view('reklame');
+    return view('arsip-pages.reklame');
+});
+Route::get('/add-reklame', function() {
+    return view('crud-reklame.add-reklame');
 });
 
+/////////RESTORAN///////////
 Route::get('/restoran', function() {
-    return view('restoran');
+    return view('arsip-pages.restoran');
+});
+Route::get('/add-restoran', function() {
+    return view('crud-restoran.add-restoran');
 });
 
+/////////SARANG BURUNG WALET///////////
 Route::get('/sarangburungwalet', function() {
-    return view('sarangburungwalet');
+    return view('arsip-pages.sarangburungwalet');
 });
-
-Route::get('/dashboard', function () {
-    return view('layouts.master');
+Route::get('/add-walet', function() {
+    return view('crud-walet.add-walet');
 });
 
 Auth::routes();

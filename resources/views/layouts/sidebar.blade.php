@@ -24,13 +24,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
+                <a href="/airtanah" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Air Tanah</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
+                <a href="/hiburan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Hiburan</p>
                 </a>
@@ -42,37 +42,37 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
+                <a href="/mineral" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mineral</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
+                <a href="/parkir" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Parkir</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
+                <a href="/peneranganjalan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Penerangan Jalan</p>
                 </a>
               </li>
                  <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
+                <a href="/reklame" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Reklame</p>
                 </a>
               </li>
                  <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
+                <a href="/restoran" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Restoran</p>
                 </a>
               </li>
                  <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
+                <a href="/sarangburungwalet" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sarang Burung Walet</p>
                 </a>
@@ -105,17 +105,12 @@
           </li>
 
               <li class="nav-item">
-                <a href="/login" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Login</p>
+                  <p>Log Out</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="/register" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Register</p>
-                </a>
-              </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
