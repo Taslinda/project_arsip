@@ -72,3 +72,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/upload', 'UploadController@upload');
 Route::post('/upload/proses', 'UploadController@proses_upload');
 
+// Route Controller
+Route::get('/hotel', 'HotelController@index');
+Route::post('/hotel/create','HotelController@create');
+Route::get('/hotel/{id}/edit','HotelController@edit');
+Route::post('/hotel/{id}/update','HotelController@update');
+Route::get('/hotel/{id}/delete','HotelController@delete');

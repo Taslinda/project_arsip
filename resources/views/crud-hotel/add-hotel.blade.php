@@ -40,7 +40,7 @@
             </ol>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
     <!-- Main content -->
@@ -57,108 +57,115 @@
                 </button>
               </div>
             </div>
+            
             <div class="card-body">
-              <div class="form-group">
-                <label for="inputLok">Lokasi</label>
-                <input type="text" id="inputLok" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="inputTglReg">Tanggal Registrasi</label>
-                <input type="date" id="inputTglReg" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="inputTglPend">Tanggal Pendataan</label>
-                <input type="date" id="inputTglPend" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="inputName">Nama Pemilik/Pengelola</label>
-                <input type="text" id="inputName" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="inputKtp">No. KTP</label>
-                <input type="text" id="inputKtp" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="inputNPWP">No. NPWP</label>
-                <input type="text" id="inputNPWP" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="inputAlamatLeng">Alamat Lengkap</label>
-                <textarea id="inputAlamatLeng" class="form-control" rows="4"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="inputBid">Bidang Pajak</label>
-                <select id="inputBid" class="form-control custom-select">
-                  <option selected disabled>Select one</option>
-                  <option>Pajak Air Tanah</option>
-                  <option>Pajak Hiburan</option>
-                  <option>Pajak Hotel</option>
-                  <option>Pajak Mineral</option>
-                  <option>Pajak Parkir</option>
-                  <option>Pajak Penerangan Jalan</option>
-                  <option>Pajak Reklame</option>
-                  <option>Pajak Restoran</option>
-                  <option>Pajak Sarang Burung Walet</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="inputUsaha">Nama Badan/Merk Usaha</label>
-                <input type="text" id="inputUsaha" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="inputAlamat">Alamat Usaha</label>
-                <input type="text" id="inputAlamat" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="inputNpwpd">NPWPD</label>
-                <input type="text" id="inputNpwpd" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="inputGol">Golongan Hotel</label>
-                <input type="text" id="inputGol" class="form-control">
-              </div>
-              <form action="/upload/proses" method="POST" enctype="multipart/form-data">
-					{{ csrf_field() }}
- 
-					<div class="form-group">
-						<b>Upload Berkas Pendataan Hotel</b><br/>
-						<input type="file" name="file">
-					</div>
- 
-					<div class="form-group">
-						<b>Keterangan</b>
-						<textarea class="form-control" name="keterangan"></textarea>
-					</div>
- 
-					
-				</form>
+              <form action="arsip-pages.hotel" method="POST">
+              {{csrf_field()}}
+                <div class="form-group">
+                  <label for="inputLok">Lokasi</label>
+                  <input name="lokasi" type="text" id="inputLok" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="inputTglReg">Tanggal Registrasi</label>
+                  <input name="tgl_registrasi" type="date" id="inputTglReg" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="inputTglPend">Tanggal Pendataan</label>
+                  <input name="tgl_pendataan" type="date" id="inputTglPend" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="inputName">Nama Pemilik/Pengelola</label>
+                  <input name="nama_pemilik" type="text" id="inputName" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="inputKtp">No. KTP</label>
+                  <input name="no_ktp" type="text" id="inputKtp" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="inputNPWP">No. NPWP</label>
+                  <input name="no_npwp" type="text" id="inputNPWP" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="inputAlamatLeng">Alamat Lengkap</label>
+                  <textarea name="alamat_pemilik" id="inputAlamatLeng" class="form-control" rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputBid">Bidang Pajak</label>
+                  <select name="bidang_pajak" id="inputBid" class="form-control custom-select">
+                    <option selected disabled>Select one</option>
+                    <option>Pajak Air Tanah</option>
+                    <option>Pajak Hiburan</option>
+                    <option>Pajak Hotel</option>
+                    <option>Pajak Mineral</option>
+                    <option>Pajak Parkir</option>
+                    <option>Pajak Penerangan Jalan</option>
+                    <option>Pajak Reklame</option>
+                    <option>Pajak Restoran</option>
+                    <option>Pajak Sarang Burung Walet</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputUsaha">Nama Badan/Merk Usaha</label>
+                  <input name="nama_usaha" type="text" id="inputUsaha" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="inputAlamat">Alamat Usaha</label>
+                  <input name="alamat_usaha" type="text" id="inputAlamat" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="inputNpwpd">NPWPD</label>
+                  <input name="no_npwpd" type="text" id="inputNpwpd" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="inputGol">Golongan Hotel</label>
+                  <input name="golongan_hotel" type="text" id="inputGol" class="form-control">
+                </div>
+
+                <form action="/upload/proses" method="POST" enctype="multipart/form-data">
+                {{ csrf_field() }} 
+                <div class="form-group">
+                  <b>Upload Berkas Pendataan Hotel</b><br/>
+                  <input type="file" name="file">
+                </div>
+      
+                <div class="form-group">
+                  <b>Keterangan</b>
+                  <textarea class="form-control" name="keterangan"></textarea>
+                </div>
+                
+                <div class="row">
+                  <div class="col-md-8">
+                    <a href="#" class="btn btn-secondary">Cancel</a>
+                    <input type="submit" value="Save" class="btn btn-primary">           
+                  </div>
+
+				      </form>
+
             </div>
-            <!-- /.card-body -->
           </div>
-          <!-- /.card -->
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-8">
-          <a href="#" class="btn btn-secondary">Cancel</a>
-          <input type="submit" value="Save" class="btn btn-primary">
         </div>
       </div>
     </section>
-    <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
+  
 
   <!-- FOOTER -->
   @include('layouts.footer')
-
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
   </aside>
-  <!-- /.control-sidebar -->
 </div>
-<!-- ./wrapper -->
 
 <!-- jQuery -->
 <script src="{{ asset('frontend') }}/plugins/jquery/jquery.min.js"></script>
