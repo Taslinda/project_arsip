@@ -52,8 +52,21 @@
 
     <!-- Main content -->
     <section class="content">
+    
+      <form action="/hotel" method="get">
+        <div class="form-inline" style="margin-bottom: 10px">
+          <div class="input-group">
+            <input class="form-control form-control-sidebar" type="search" placeholder="Cari" aria-label="Search">
+            <div class="input-group-append">
+              <button >
+                <i class="fas fa-search fa-fw"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+      
       <div class="card">
-
         <div class="card-header">
           <h3 class="card-title">Arsip Pendataan Hotel</h3>
 
@@ -84,43 +97,43 @@
                          {{csrf_field()}}
                         <div class="form-group">
                           <label for="inputLok">Lokasi</label>
-                          <input name="lokasi" type="text" id="inputLok" class="form-control">
+                          <input name="lokasi" type="text" id="inputLok" class="form-control" required>
                         </div>
 
                         <div class="form-group">
                           <label for="inputTglReg">Tanggal Registrasi</label>
-                          <input name="tgl_registrasi" type="date" id="inputTglReg" class="form-control">
+                          <input name="tgl_registrasi" type="date" id="inputTglReg" class="form-control" required>
                         </div>
 
                         <div class="form-group">
                           <label for="inputTglPend">Tanggal Pendataan</label>
-                          <input name="tgl_pendataan" type="date" id="inputTglPend" class="form-control">
+                          <input name="tgl_pendataan" type="date" id="inputTglPend" class="form-control" required>
                         </div>
 
                         <div class="form-group">
                           <label for="inputName">Nama Pemilik/Pengelola</label>
-                          <input name="nama_pemilik" type="text" id="inputName" class="form-control">
+                          <input name="nama_pemilik" type="text" id="inputName" class="form-control" required>
                         </div>
 
                         <div class="form-group">
                           <label for="inputKtp">No. KTP</label>
-                          <input name="no_ktp" type="text" id="inputKtp" class="form-control">
+                          <input name="no_ktp" type="text" id="inputKtp" class="form-control" required>
                         </div>
 
                         <div class="form-group">
                           <label for="inputNPWP">No. NPWP</label>
-                          <input name="no_npwp" type="text" id="inputNPWP" class="form-control">
+                          <input name="no_npwp" type="text" id="inputNPWP" class="form-control" required>
                         </div>
 
                         <div class="form-group">
                           <label for="inputAlamatLeng">Alamat Lengkap</label>
-                          <textarea name="alamat_pemilik" id="inputAlamatLeng" class="form-control" rows="4"></textarea>
+                          <textarea name="alamat_pemilik" id="inputAlamatLeng" class="form-control" rows="4" required></textarea>
                         </div>
 
                         <div class="form-group">
                           <label for="inputBid">Bidang Pajak</label>
-                          <select name="bidang_pajak" id="inputBid" class="form-control custom-select">
-                            <option selected disabled>Select one</option>
+                          <select name="bidang_pajak" id="inputBid" class="form-control custom-select" required>
+                            <option selected disabled>Pilih</option>
                             <option>Pajak Air Tanah</option>
                             <option>Pajak Hiburan</option>
                             <option>Pajak Hotel</option>
@@ -135,40 +148,43 @@
 
                         <div class="form-group">
                           <label for="inputUsaha">Nama Badan/Merk Usaha</label>
-                          <input name="nama_usaha" type="text" id="inputUsaha" class="form-control">
+                          <input name="nama_usaha" type="text" id="inputUsaha" class="form-control" required>
                         </div>
 
                         <div class="form-group">
                           <label for="inputAlamat">Alamat Usaha</label>
-                          <input name="alamat_usaha" type="text" id="inputAlamat" class="form-control">
+                          <input name="alamat_usaha" type="text" id="inputAlamat" class="form-control" required>
                         </div>
 
                         <div class="form-group">
                           <label for="inputNpwpd">NPWPD</label>
-                          <input name="no_npwpd" type="text" id="inputNpwpd" class="form-control">
+                          <input name="no_npwpd" type="text" id="inputNpwpd" class="form-control" required>
                         </div>
 
                         <div class="form-group">
                           <label for="inputGol">Golongan Hotel</label>
-                          <input name="golongan_hotel" type="text" id="inputGol" class="form-control">
+                          <input name="golongan_hotel" type="text" id="inputGol" class="form-control" required>
                         </div>
+
+                        @if(count($errors) > 0)
+                        <div class="alert alert-danger">
+                          @foreach ($errors->all() as $error)
+                          {{ $error }} <br/>
+                          @endforeach
+                        </div>
+                        @endif
 
                         <form action="/upload/proses" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }} 
                         <div class="form-group">
                           <b>Upload Berkas Pendataan Hotel</b><br/>
-                          <input type="file" name="file">
-                        </div>
-              
-                        <div class="form-group">
-                          <b>Keterangan</b>
-                          <textarea class="form-control" name="keterangan"></textarea>
+                          <input type="file" name="file" required> 
                         </div>
                         
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                          <button type="submit" class="btn btn-primary">Save</button>
+                          <button type="submit" value="Upload" class="btn btn-primary">Save</button>
                       </form>
                     </div>
                 </div>
@@ -178,7 +194,7 @@
           <div class="card-body p-0">
           <table class="table table-striped projects">
               <thead>
-                  <tr>
+                  <tr class="text-center">
                       <th>No</th>
                       <th>Lokasi</th>
                       <th>Tanggal Registrasi</th>
@@ -186,6 +202,7 @@
                       <th>No. NPWPD</th>
                       <th>Nama Wajib Pajak</th>
                       <th>Alamat Objek Pajak</th>
+                      <th>File</th>
                       <th>Aksi</th>
                   </tr>
                   <?php $no =0;?>
@@ -194,7 +211,7 @@
               
               <tbody>
               <?php $no++ ;?>
-                  <tr>
+                  <tr class="text-center">
                       <td>{{$no}}</td>
                       <td>{{$hotel->lokasi}}</td>
                       <td>{{$hotel->tgl_registrasi}}</td>
@@ -202,6 +219,7 @@
                       <td>{{$hotel->no_npwpd}}</td>
                       <td>{{$hotel->nama_usaha}}</td>
                       <td>{{$hotel->alamat_usaha}}</td>
+                      <td>{{$hotel->file}}</td>
                       <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
                               <i class="fas fa-folder">

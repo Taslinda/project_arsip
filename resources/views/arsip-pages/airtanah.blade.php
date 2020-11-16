@@ -4,27 +4,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Arsip</title>
-
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ asset('frontend') }}/plugins/fontawesome-free/css/all.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('frontend') }}/dist/css/adminlte.min.css">
+  <title>Air Tanah</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('frontend') }}/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('frontend') }}/dist/css/adminlte.min.css">
 </head>
+
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
   <!-- SIDEBAR -->
   @include('layouts.sidebar')
-
-    <!-- HEADER -->
-    @include('layouts.header')
+  <!-- HEADER -->
+  @include('layouts.header')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+  <!-- Alert -->
+  @if(session('succes'))
+    <div class="alert alert-succes" role="alert">
+      {{session('sukses')}}
+    </div>
+  @endif
+
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -34,20 +39,34 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active" ><a href="/add-airtanah" class="btn btn-sm btn-primary m-b-10"><i class="fa fa-plus-circle"></i> &nbsp;Add Dokumen</a></li>
+              <li class="breadcrumb-item active" ><!-- Button trigger modal -->
+                <button type="button" class="btn btn-sm btn-primary m-b-10" data-toggle="modal" data-target="#exampleModal">
+                  <i class="fa fa-plus-circle"></i> &nbsp;Add Dokumen
+                </button> 
+            </li>
             </ol>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
     <!-- Main content -->
     <section class="content">
-
-      <!-- Default box -->
+      <div class="form-inline" style="margin-bottom: 10px">
+        <div class="input-group">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Cari" aria-label="Search">
+          <div class="input-group-append">
+            <button >
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
       <div class="card">
+
         <div class="card-header">
           <h3 class="card-title">Arsip Pendataan Air Tanah</h3>
+
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
               <i class="fas fa-minus"></i>
@@ -56,100 +75,170 @@
               <i class="fas fa-times"></i>
             </button>
           </div>
-          <div style="width: 25%">
-            <div class="input-group">
-                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button>
-                    <i class="fas fa-search fa-fw"></i>
+        </div>
+
+        <div class="modal-add-document">
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Berkas Arsip Air Tanah</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
                     </button>
+                  </div>
+                  
+                  <div class="modal-body">
+                      <form action="/hotel/create" method="POST">
+                         {{csrf_field()}}
+                        <div class="form-group">
+                          <label for="inputLok">Lokasi</label>
+                          <input name="lokasi" type="text" id="inputLok" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="inputTglReg">Tanggal Registrasi</label>
+                          <input name="tgl_registrasi" type="date" id="inputTglReg" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="inputTglPend">Tanggal Pendataan</label>
+                          <input name="tgl_pendataan" type="date" id="inputTglPend" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="inputName">Nama Pemilik/Pengelola</label>
+                          <input name="nama_pemilik" type="text" id="inputName" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="inputKtp">No. KTP</label>
+                          <input name="no_ktp" type="text" id="inputKtp" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="inputNPWP">No. NPWP</label>
+                          <input name="no_npwp" type="text" id="inputNPWP" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="inputAlamatLeng">Alamat Lengkap</label>
+                          <textarea name="alamat_pemilik" id="inputAlamatLeng" class="form-control" rows="4"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="inputBid">Bidang Pajak</label>
+                          <select name="bidang_pajak" id="inputBid" class="form-control custom-select">
+                            <option selected disabled>Pilih</option>
+                            <option>Pajak Air Tanah</option>
+                            <option>Pajak Hiburan</option>
+                            <option>Pajak Hotel</option>
+                            <option>Pajak Mineral</option>
+                            <option>Pajak Parkir</option>
+                            <option>Pajak Penerangan Jalan</option>
+                            <option>Pajak Reklame</option>
+                            <option>Pajak Restoran</option>
+                            <option>Pajak Sarang Burung Walet</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="inputUsaha">Nama Badan/Merk Usaha</label>
+                          <input name="nama_usaha" type="text" id="inputUsaha" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="inputAlamat">Alamat Usaha</label>
+                          <input name="alamat_usaha" type="text" id="inputAlamat" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="inputNpwpd">NPWPD</label>
+                          <input name="no_npwpd" type="text" id="inputNpwpd" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="inputGol">Golongan Hotel</label>
+                          <input name="golongan_hotel" type="text" id="inputGol" class="form-control">
+                        </div>
+
+                        <form action="/upload/proses" method="POST" enctype="multipart/form-data">
+                        {{ csrf_field() }} 
+                        <div class="form-group">
+                          <b>Upload Berkas Pendataan Air Tanah</b><br/>
+                          <input type="file" name="file">
+                        </div>
+            
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                          <button type="submit" class="btn btn-primary">Save</button>
+                      </form>
+                    </div>
                 </div>
+              </div>
             </div>
-        </div>
-        </div>
-        <div class="card-body p-0">
+            
+          <div class="card-body p-0">
           <table class="table table-striped projects">
               <thead>
-                  <tr>
-                      <th style="width: 1%">
-                          No
-                      </th>
-                      <th style="width: 9%">
-                          Lokasi
-                      </th>
-                      <th style="width: 6%">
-                          Tanggal Registrasi
-                      </th>
-                      <th style="width: 6%">
-                          Tanggal Pendataan
-                      </th>
-                      <th class="text-center" style="width: 6%">
-                          No. NPWPD
-                      </th>
-                      <th class="text-center">
-                          Nama Wajib Pajak
-                      </th>
-                      <th class="text-center">
-                          Alamat Objek Pajak
-                      </th>
-                      <th style="width: 20%">
-                      </th>
+                  <tr class="text-center">
+                      <th>No</th>
+                      <th>Lokasi</th>
+                      <th>Tanggal Registrasi</th>
+                      <th>Tanggal Pendataan</th>
+                      <th>No. NPWPD</th>
+                      <th>Nama Wajib Pajak</th>
+                      <th>Alamat Objek Pajak</th>
+                      <th>Aksi</th>
                   </tr>
+                  <?php $no =0;?>
+                  @foreach($data_airtanah as $airtanah)
               </thead>
+              
               <tbody>
-                  <tr>
-                      <td class="text-center">
-                          
-                      </td>
-                      <td>
-                        
-                      </td>
-                      <td>
-                          
-                      </td>
-                      <td>
-                    
-                      </td>
-                      <td class="text-center">
-                          
-                      </td>
-                      <td class="text-center">
-                          
-                      </td>
-                      <td class="text-center">
-                         
-                      </td>
+              <?php $no++ ;?>
+                  <tr class="text-center">
+                      <td>{{$no}}</td>
+                      <td>{{$airtanah->lokasi}}</td>
+                      <td>{{$airtanah->tgl_registrasi}}</td>
+                      <td>{{$airtanah->tgl_pendataan}}0</td>
+                      <td>{{$airtanah->no_npwpd}}</td>
+                      <td>{{$airtanah->nama_usaha}}</td>
+                      <td>{{$airtanah->alamat_usaha}}</td>
                       <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
                               <i class="fas fa-folder">
                               </i>
                           </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
+                          <a class="btn btn-info btn-sm" href="/hotel/{{$hotel->id}}/edit">
+                              <i class="fas fa-pencil-alt"></i>
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
+                          <a class="btn btn-danger btn-sm" href="/hotel/{{$hotel->id}}/delete" onclick="return confirm('Yakin Ingin Di Hapus')">
+                              <i class="fas fa-trash"></i>
                           </a>
                           <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fa fa-download">
-                              </i>
+                              <i class="fa fa-download"></i>
                           </a>
                       </td>
                   </tr>
               </tbody>
+          
+          
+          
+          @endforeach
           </table>
-        </div>
-        <!-- /.card-body -->
+    
       </div>
-      <!-- /.card -->
 
-    </section>
-    <!-- /.content -->
+    </div>
+ </section>
+
+
+
+
   </div>
-  <!-- /.content-wrapper -->
-
   <!-- FOOTER -->
   @include('layouts.footer')
 
