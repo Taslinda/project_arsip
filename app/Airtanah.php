@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Hotel extends Model
+class Airtanah extends Model
 {
-    protected $table = 'hotel';
+    protected $table = 'airtanahs';
     protected $fillable = [
         'lokasi',
         'tgl_registrasi',
@@ -19,7 +19,6 @@ class Hotel extends Model
         'nama_usaha',
         'alamat_usaha',
         'no_npwpd',
-        'golongan_hotel',
         'file_upload'
     ];
 }
