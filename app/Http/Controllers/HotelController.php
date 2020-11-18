@@ -6,11 +6,16 @@ use Illuminate\Http\Request;
 
 class HotelController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-       $data_hotel = \App\Hotel::all(); 
+        if($request->has('cari')){
+            $data_hotel = \App\Hotel::where('no_npwpd','LIKE','%' .$request->cari. '%')->get();
+        }else{
+            $data_hotel = \App\Hotel::all(); 
+        }
        return view('arsip-pages.hotel', ['data_hotel' => $data_hotel]);
     }
+
 
     public function create(Request $request)
     {

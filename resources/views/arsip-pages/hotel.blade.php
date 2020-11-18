@@ -53,10 +53,10 @@
     <!-- Main content -->
     <section class="content">
     
-      <form action="/hotel" method="get">
+    <form class="form-inline my-2 my-lg-0" action="/hotel" method="GET">
         <div class="form-inline" style="margin-bottom: 10px">
           <div class="input-group">
-            <input class="form-control form-control-sidebar" type="search" placeholder="Cari" aria-label="Search">
+            <input name="cari" class="form-control form-control-sidebar" type="search" placeholder="Cari" aria-label="Search">
             <div class="input-group-append">
               <button >
                 <i class="fas fa-search fa-fw"></i>
@@ -65,6 +65,7 @@
           </div>
         </div>
       </form>
+
       
       <div class="card">
         <div class="card-header">
