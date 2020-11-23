@@ -8,4 +8,8 @@ class Parkir extends Model
 {
     protected $table = 'parkirs';
     protected $guarded = [];
+
+    public static function totalParkir() {
+        return Parkir::count();
+    }
 }

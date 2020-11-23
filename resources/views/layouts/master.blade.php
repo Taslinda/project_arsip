@@ -62,8 +62,8 @@
           <div class="col-lg-3 col-6">
           <div class="small-box bg-info">
               <div class="inner">
-                <h3>53</h3>
-                <p>Arsip Air Tanah</p>
+                <h3>{{ \App\AirTanah::totalAirTanah() }}</h3>
+                <p>Arsip Air Bawah Tanah</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -75,7 +75,7 @@
           <div class="col-lg-3 col-6">
           <div class="small-box bg-info">
               <div class="inner">
-                <h3>53</h3>
+                <h3>{{ \App\Hiburan::totalHiburan() }}</h3>
                 <p>Arsip Hiburan</p>
               </div>
               <div class="icon">
@@ -88,7 +88,7 @@
           <div class="col-lg-3 col-6">
           <div class="small-box bg-info">
               <div class="inner">
-                <h3>53</h3>
+                <h3>{{ \App\Hotel::totalHotel() }}</h3>
                 <p>Arsip Hotel</p>
               </div>
               <div class="icon">
@@ -101,7 +101,7 @@
           <div class="col-lg-3 col-6">
           <div class="small-box bg-info">
               <div class="inner">
-                <h3>53</h3>
+                <h3>{{ \App\Mineral::totalMineral() }}</h3>
                 <p>Arsip Mineral</p>
               </div>
               <div class="icon">
@@ -114,7 +114,7 @@
           <div class="col-lg-3 col-6">
           <div class="small-box bg-info">
               <div class="inner">
-                <h3>53</h3>
+                <h3>{{ \App\Parkir::totalParkir() }}</h3>
                 <p>Arsip Parkir</p>
               </div>
               <div class="icon">
@@ -127,7 +127,7 @@
           <div class="col-lg-3 col-6">
           <div class="small-box bg-info">
               <div class="inner">
-                <h3>53</h3>
+                <h3>{{ \App\Peneranganjalan::totalPeneranganjalan() }}</h3>
                 <p>Arsip Penerangan Jalan</p>
               </div>
               <div class="icon">
@@ -140,7 +140,7 @@
           <div class="col-lg-3 col-6">
           <div class="small-box bg-info">
               <div class="inner">
-                <h3>53</h3>
+                <h3>{{ \App\Reklame::totalReklame() }}</h3>
                 <p>Arsip Reklame</p>
               </div>
               <div class="icon">
@@ -153,7 +153,7 @@
           <div class="col-lg-3 col-6">
           <div class="small-box bg-info">
               <div class="inner">
-                <h3>53</h3>
+                <h3>{{ \App\Restoran::totalRestoran() }}</h3>
                 <p>Arsip Restoran</p>
               </div>
               <div class="icon">
@@ -166,7 +166,7 @@
           <div class="col-lg-3 col-6">
           <div class="small-box bg-info">
               <div class="inner">
-                <h3>53</h3>
+                <h3>{{ \App\Sarangburungwalet::totalSarangburungwalet() }}</h3>
                 <p>Arsip Sarang Burung Walet</p>
               </div>
               <div class="icon">

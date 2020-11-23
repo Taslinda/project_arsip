@@ -8,4 +8,8 @@ class Hotel extends Model
 {
     protected $table = 'hotel';
     protected $guarded = [];
+
+    public static function totalHotel() {
+        return Hotel::count();
+    }
 }

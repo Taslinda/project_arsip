@@ -438,7 +438,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <a class="btn btn-danger btn-sm" href="/hotel/{{$hotel->id}}/delete">
+          <a class="btn btn-danger btn-sm" href="/airtanah/{{$airtanah->id}}/delete">
             Delete
           </a>
         </div>

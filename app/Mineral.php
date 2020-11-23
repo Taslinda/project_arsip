@@ -8,4 +8,8 @@ class Mineral extends Model
 {
     protected $table = 'minerals';
     protected $guarded = [];
+
+    public static function totalMineral() {
+        return Mineral::count();
+    }
 }
