@@ -15,17 +15,17 @@ class CreateRestoransTable extends Migration
     {
         Schema::create('restorans', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('lokasi');
-            $table->string('tgl_registrasi');            
+            $table->string('lokasi');          
             $table->string('tgl_pendataan');
             $table->string('nama_pemilik');
             $table->integer('no_ktp');
             $table->integer('no_npwp');
             $table->string('alamat_pemilik');
             $table->string('bidang_pajak');
+            $table->string('nama_usaha');
             $table->string('alamat_usaha');
-            $table->integer('npwpd');
-            $table->string('file_upload');
+            $table->integer('no_npwpd');
+            $table->string('file');
             $table->timestamps();
         });
     }

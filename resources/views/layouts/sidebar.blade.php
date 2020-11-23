@@ -107,6 +107,35 @@
                   <p>Surat Keluar</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="pages/tables/data.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Surat Keputusan</p>
+                </a>
+              </li>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon" ></i>
+                <p>
+                  Berita Acara
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                  <a href="pages/tables/simple.html" class="nav-link">
+                    <i></i>
+                    <p>Pemasangan Alat Transaksi</p>
+                  </a>
+                  </li>
+                  <li class="nav-item">
+                  <a href="pages/tables/simple.html" class="nav-link">
+                    <i></i>
+                    <p>Penarikan Alat Transaksi</p>
+                  </a>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </li>
 
