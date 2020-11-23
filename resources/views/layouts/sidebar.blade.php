@@ -90,25 +90,25 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
+                <a href="/suratteguran" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Surat Teguran</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
+                <a href="/suratmasuk" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Surat Masuk</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
+                <a href="/suratkeluar" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Surat Keluar</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
+                <a href="/suratkeputusan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Surat Keputusan</p>
                 </a>
@@ -123,13 +123,13 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                  <a href="pages/tables/simple.html" class="nav-link">
+                  <a href="/suratpemasangan" class="nav-link">
                     <i></i>
                     <p>Pemasangan Alat Transaksi</p>
                   </a>
                   </li>
                   <li class="nav-item">
-                  <a href="pages/tables/simple.html" class="nav-link">
+                  <a href="/suratpenarikan" class="nav-link">
                     <i></i>
                     <p>Penarikan Alat Transaksi</p>
                   </a>

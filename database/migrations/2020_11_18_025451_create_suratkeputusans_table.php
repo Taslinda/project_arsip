@@ -15,6 +15,7 @@ class CreateSuratkeputusansTable extends Migration
     {
         Schema::create('suratkeputusans', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('lokasi');
             $table->string('no_surat');
             $table->string('tgl_sk');
             $table->string('ket');

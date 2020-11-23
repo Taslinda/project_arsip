@@ -125,7 +125,7 @@ Route::get('/restoran/{id}/delete','RestoranController@delete');
 Route::get('/{urlName}/{file}/download','RestoranController@downloadFilePdf');
 
 /////////SARANG BURUNG WALET///////////
-Route::get('/sarangburungwalet', function() {
+Route::get('/suratmasuk', function() {
     return view('arsip-pages.sarangburungwalet');
 });
 Route::get('/sarangburungwalet', 'SarangburungwaletController@index');
@@ -137,9 +137,49 @@ Route::get('/{urlName}/{file}/download','SarangburungwaletController@downloadFil
 
 /////////SURAT MASUK///////////
 Route::get('/suratmasuk', 'SuratmasukController@index');
+Route::post('/suratmasuk/create','SuratmasukController@create');
+Route::get('/suratmasuk/{id}/edit','SuratmasukController@edit');
+Route::post('/suratmasuk/{id}/update','SuratmasukController@update');
+Route::get('/suratmasuk/{id}/delete','SuratmasukController@delete');
+Route::get('/{urlName}/{file}/download','SuratmasukController@downloadFilePdf');
 
 /////////SURAT KELUAR///////////
 Route::get('/suratkeluar', 'SuratkeluarController@index');
+Route::post('/suratkeluar/create','SuratkeluarController@create');
+Route::get('/suratkeluar/{id}/edit','SuratkeluarController@edit');
+Route::post('/suratkeluar/{id}/update','SuratkeluarController@update');
+Route::get('/suratkeluar/{id}/delete','SuratkeluarController@delete');
+Route::get('/{urlName}/{file}/download','SuratkeluarController@downloadFilePdf');
 
 /////////SURAT KEPUTUSAN//////////
 Route::get('/suratkeputusan', 'SuratkeputusanController@index');
+Route::post('/suratkeputusan/create','SuratkeputusanController@create');
+Route::get('/suratkeputusan/{id}/edit','SuratkeputusanController@edit');
+Route::post('/suratkeputusan/{id}/update','SuratkeputusanController@update');
+Route::get('/suratkeputusan/{id}/delete','SuratkeputusanController@delete');
+Route::get('/{urlName}/{file}/download','SuratkeputusanController@downloadFilePdf');
+
+/////////SURAT TEGURAN//////////
+Route::get('/suratteguran', 'SuratteguranController@index');
+Route::post('/suratteguran/create','SuratteguranController@create');
+Route::get('/suratteguran/{id}/edit','SuratteguranController@edit');
+Route::post('/suratteguran/{id}/update','SuratteguranController@update');
+Route::get('/suratteguran/{id}/delete','SuratteguranController@delete');
+Route::get('/{urlName}/{file}/download','SuratteguranController@downloadFilePdf');
+
+
+/////////BERITA ACARA PEMASANGAN//////////
+Route::get('/suratpemasangan', 'SuratpemasanganController@index');
+Route::post('/suratpemasangan/create','SuratpemasanganController@create');
+Route::get('/suratpemasangan/{id}/edit','SuratpemasanganController@edit');
+Route::post('/suratpemasangan/{id}/update','SuratpemasanganController@update');
+Route::get('/suratpemasangan/{id}/delete','SuratpemasanganController@delete');
+Route::get('/{urlName}/{file}/download','SuratpemasanganController@downloadFilePdf');
+
+/////////BERITA ACARA PENARIKAN//////////
+Route::get('/suratpenarikan', 'SuratpenarikanController@index');
+Route::post('/suratpenarikan/create','SuratpenarikanController@create');
+Route::get('/suratpenarikan/{id}/edit','SuratpenarikanController@edit');
+Route::post('/suratpenarikan/{id}/update','SuratpenarikanController@update');
+Route::get('/suratpenarikan/{id}/delete','SuratpenarikanController@delete');
+Route::get('/{urlName}/{file}/download','SuratpenarikanController@downloadFilePdf');

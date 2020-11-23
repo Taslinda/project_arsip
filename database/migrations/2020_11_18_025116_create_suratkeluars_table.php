@@ -15,6 +15,7 @@ class CreateSuratkeluarsTable extends Migration
     {
         Schema::create('suratkeluars', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('lokasi');
             $table->string('no_surat');
             $table->string('tgl_keluar');
             $table->string('ket');
