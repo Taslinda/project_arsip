@@ -25,6 +25,13 @@ Route::get('/dashboard', function () {
     return view('layouts.master');
 });
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/upload', 'UploadController@upload');
+Route::post('/upload/proses', 'UploadController@proses_upload');
+
 /////////AIR TANAH///////////
 Route::get('/airtanah', function() {
     return view('arsip-pages.airtanah');
@@ -124,11 +131,11 @@ Route::post('/sarangburungwalet/{id}/update','SarangburungwaletController@update
 Route::get('/sarangburungwalet/{id}/delete','SarangburungwaletController@delete');
 Route::get('/{urlName}/{file}/download','SarangburungwaletController@downloadFilePdf');
 
-Auth::routes();
+/////////SURAT MASUK///////////
+Route::get('/suratmasuk', 'SuratmasukController@index');
 
-Route::get('/home', 'HomeController@index')->name('home');
+/////////SURAT KELUAR///////////
+Route::get('/suratkeluar', 'SuratkeluarController@index');
 
-Route::get('/upload', 'UploadController@upload');
-Route::post('/upload/proses', 'UploadController@proses_upload');
-
-// Route Controller
+/////////SURAT KEPUTUSAN//////////
+Route::get('/suratkeputusan', 'SuratkeputusanController@index');
