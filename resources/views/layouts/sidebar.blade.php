@@ -140,12 +140,12 @@
           </li>
 
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('logout') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Log Out</p>
                 </a>
               </li>
-
+              
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

@@ -17,19 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function() {
-    return view('login');
-});
-
-Route::get('/register', function() {
-    return view('register');
-});
-
-Route::get('/dashboard', function () {
+Route::get('/register','AuthController@getRegister')->name('register')->middleware('guest');
+Route::post('/register','AuthController@postRegister')->middleware('guest');
+Route::get('/login','AuthController@getLogin')->middleware('guest')->name('login');
+Route::post('/login','AuthController@postLogin')->middleware('guest');
+Route::get('/dashboard',function(){
     return view('layouts.master');
-});
-
-Auth::routes();
+})->middleware('auth')->name('dashboard');
+Route::get('/logout', 'AuthController@logout')->middleware('auth')->name('logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
