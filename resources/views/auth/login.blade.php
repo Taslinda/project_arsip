@@ -46,20 +46,13 @@
           </div>
         </div>
         <div class="row">
-          <!-- /.col -->
-          <div class="col-4">
+          <div class="col-12">
+            <a href="/register" class="text-center">Belum Mempunyai Akun?</a>
             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
-
-      <!-- <p class="mb-1">
-        <a href="forgot-password.html">Lupa Password</a>
-      </p> -->
-      <p class="mb-0">
-        <a href="/register" class="text-center">Belum Mempunyai Akun?</a>
-      </p>
     </div>
     <!-- /.login-card-body -->
   </div>

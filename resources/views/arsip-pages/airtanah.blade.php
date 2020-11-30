@@ -249,7 +249,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-
+                    
                     <div class="modal-body">
                         <form action="/airtanah/{{$airtanah->id}}/update" method="POST" enctype="multipart/form-data">
                             {{csrf_field()}}

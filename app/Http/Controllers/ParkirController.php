@@ -12,13 +12,16 @@ class ParkirController extends Controller
     public function index(Request $request)
     {
         if($request->has('cari')){
-            $data_parkir = \App\Parkir::where('no_npwpd','LIKE','%' .$request->cari. '%')->get();
+            $data_hotel = \App\Parkir::where('lokasi','LIKE','%' .$request->cari. '%')
+            ->orwhere('no_npwpd','LIKE','%' .$request->cari. '%')
+            ->orwhere('nama_usaha','LIKE','%' .$request->cari. '%')
+            ->orwhere('alamat_usaha','LIKE','%' .$request->cari. '%')->get();
         }else{
             $data_parkir = \App\Parkir::all(); 
         }
        return view('arsip-pages.parkir', ['data_parkir' => $data_parkir]);
     }
-
+    
 
     public function create(Request $request)
     {

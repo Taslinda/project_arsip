@@ -98,7 +98,7 @@
         <div class="row">
             <a href="/login" class="text-center">Sudah Mempunyai Akun?</a>
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <button style="margin-left:3.2rem" type="submit" class="btn btn-primary btn-block">Register</button>
           </div>
           <!-- /.col -->
         </div>

@@ -12,7 +12,10 @@ class RestoranController extends Controller
     public function index(Request $request)
     {
         if($request->has('cari')){
-            $data_restoran = \App\Restoran::where('no_npwpd','LIKE','%' .$request->cari. '%')->get();
+            $data_hotel = \App\Restoran::where('lokasi','LIKE','%' .$request->cari. '%')
+            ->orwhere('no_npwpd','LIKE','%' .$request->cari. '%')
+            ->orwhere('nama_usaha','LIKE','%' .$request->cari. '%')
+            ->orwhere('alamat_usaha','LIKE','%' .$request->cari. '%')->get();
         }else{
             $data_restoran = \App\Restoran::all(); 
         }
