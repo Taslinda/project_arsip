@@ -181,8 +181,7 @@ Route::get('/register','AuthController@getRegister')->name('register')->middlewa
 Route::post('/register','AuthController@postRegister')->middleware('guest');
 Route::get('/login','AuthController@getLogin')->middleware('guest')->name('login');
 Route::post('/login','AuthController@postLogin')->middleware('guest');
-<<<<<<< HEAD
-=======
+
 Route::get('/logout', 'AuthController@logout')->middleware('auth')->name('logout');
 
 Route::get('/dashboard',function(){
@@ -314,4 +313,3 @@ Route::get('/suratpenarikan/{id}/edit','SuratpenarikanController@edit')->name('s
 Route::post('/suratpenarikan/{id}/update','SuratpenarikanController@update')->name('suratpenarikan.update');
 Route::get('/suratpenarikan/{id}/delete','SuratpenarikanController@delete')->name('suratpenarikan.del');
 Route::get('/{urlName}/{file}/download','SuratpenarikanController@downloadFilePdf')->name('suratpenarikan.file');
->>>>>>> 30bfe96ea3048a5a91e6ecca2c4a140117d42430

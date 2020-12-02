@@ -39,7 +39,6 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item active">
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-sm btn-primary m-b-10" data-toggle="modal"
@@ -438,7 +437,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <a class="btn btn-danger btn-sm" href="/hotel/{{$hotel->id}}/delete">
+          <a class="btn btn-danger btn-sm" href="/sarangburungwalet/{{$sarangburungwalet->id}}/delete">
             Delete
           </a>
         </div>

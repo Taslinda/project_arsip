@@ -58,7 +58,7 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-
+        
           <div class="col-lg-3 col-6">
           <div class="small-box bg-info">
               <div class="inner">
@@ -68,10 +68,10 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{ route('airtanah') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
           </div>
-
+          
           <div class="col-lg-3 col-6">
           <div class="small-box bg-info">
               <div class="inner">
@@ -81,7 +81,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{ route('hiburan') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
           </div>
 
@@ -94,7 +94,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{ route('hotel') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
           </div>
 
@@ -107,7 +107,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{ route('mineral') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
           </div>
 
@@ -120,7 +120,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{ route('parkir') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
           </div>
 
@@ -133,7 +133,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{ route('peneranganjalan') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
           </div>
 
@@ -146,7 +146,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{ route('reklame') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
           </div>
 
@@ -159,7 +159,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{ route('restoran') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
           </div>
 
@@ -172,7 +172,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{ route('sarangburungwalet') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
           </div>
             
