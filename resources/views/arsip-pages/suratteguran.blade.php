@@ -82,7 +82,7 @@
                                     <th>No</th>
                                     <th>Lokasi</th>
                                     <th>Nomor Surat</th>
-                                    <th>Tanggal Surat Teguran</th>
+                                    <th>Tanggal Diterima <br> Surat Teguran</th>
                                     <th>Keterangan</th>
                                     <th>File</th>
                                     <th>Aksi</th>

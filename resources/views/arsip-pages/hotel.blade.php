@@ -81,8 +81,7 @@
                                 <tr class="text-center">
                                     <th>No</th>
                                     <th>Lokasi</th>
-                                    <th>Tanggal Registrasi</th>
-                                    <th>Tanggal Pendataan</th>
+                                    <th>Tanggal Masa Berlaku Pajak</th>
                                     <th>No. NPWPD</th>
                                     <th>Nama Wajib Pajak</th>
                                     <th>Alamat Objek Pajak</th>
@@ -167,7 +166,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="inputTglPend">Tanggal Pendataan</label>
+                                <label for="inputTglPend">Tanggal Masa Berlaku Pajak</label>
                                 <input name="tgl_pendataan" type="date" class="form-control" required>
                             </div>
 
@@ -266,7 +265,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="inputTglPend">Tanggal Pendataan</label>
+                                <label for="inputTglPend">Tanggal Masa Berlaku Pajak</label>
                                 <input value="{{ \Carbon\Carbon::parse($hotel->tgl_pendataan)->format('Y-m-d')}}" name="tgl_pendataan" type="date" id="inputTglPend" class="form-control" required>
                             </div>
 
@@ -365,7 +364,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="inputTglPend">Tanggal Pendataan</label>
+                                <label for="inputTglPend">Tanggal Masa Berlaku Pajak</label>
                                 <input value="{{ \Carbon\Carbon::parse($hotel->tgl_pendataan)->format('Y-m-d')}}" name="tgl_pendataan" type="date" id="inputTglPend" class="form-control" disabled>
                             </div>
 

@@ -4,37 +4,90 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>WELCOME</title>
+    <title>WELCOME - LOGIN</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('frontend') }}/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <style type="text/css">
+    ::placeholder {
+      color: #bdc3c7 !important;
+    }
+
+    .bg-transparant {
+      background: rgba(106, 116, 119, 0.315);
+      padding: 40px 25px 50px 25px !important;
+      border-radius: 10px;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    </style>
+
 </head>
 
-<body id="page-top">
-    <header class="d-flex masthead" style="background-image: url(&quot;assets/img/Bapenda.png&quot;);background-size: cover;">
-        <div class="container my-auto text-center">
-            <h1 class="mb-1" style="font-size: 70px;line-height: 68px;color: #002654;"><strong>Selamat Datang Di Sistem Informasi Arsip Berkas Pendataan</strong><br></h1><em style="font-size: 42px;line-height: 20px;font-weight: normal;color: #002654;"><br><strong>BADAN PENDAPATAN DAERAH KOTA MAKASSAR</strong><br><br></em>
-            <a
-                class="btn btn-primary btn-xl js-scroll-trigger" role="button" href="/login">LOGIN</a>
-                <div class="overlay"></div>
+<body>
+    <nav style= "background-color:#8B0000" class="navbar navbar-expand-lg fixed-top  clean-navbar">
+        <div class="container" >
+            <a class="navbar-brand logo" href="#">
+             <img src="assets/img/logo bapenda.png" alt="" width="20%"  >
+            </a>
         </div>
-    </header>
-    <section id="contact" class="map">
-        <iframe allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63580.41878964422!2d119.44052081809438!3d-5.139701845106812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbefd51ceaa288b%3A0xaecd7cf9f6b68b27!2sBADAN%20PENDAPATAN%20DAERAH%20KOTA%20MAKASSAR!5e0!3m2!1sid!2sid!4v1604544523546!5m2!1sid!2sid" width="100%" height="400" style="border:0;" aria-hidden="false" tabindex="0"></iframe></section>
-    <footer class="footer text-center">
-        <div class="container">
-            <ul class="list-inline mb-5">
-                <li class="list-inline-item">&nbsp;<a class="text-white social-link rounded-circle" href="#"><i class="icon-social-facebook"></i></a></li>
-                <li class="list-inline-item">&nbsp;<a class="text-white social-link rounded-circle" href="#"><i class="icon-social-twitter"></i></a></li>
-                <li class="list-inline-item">&nbsp;<a class="text-white social-link rounded-circle" href="#"><i class="icon-social-github"></i></a></li>
-            </ul>
-            <p class="text-muted mb-0 small">Copyright &nbsp;© Brand 2020</p>
-        </div><a class="js-scroll-trigger scroll-to-top rounded" href="#page-top"><i class="fa fa-angle-up"></i></a></footer>
+    </nav>
+    <main class="page landing-page">
+        <section class="clean-block clean-hero" style="background-image:url(&quot;assets/img/bapendaa.jpg&quot;); color:rgba(128, 153, 168, 0.692);">
+            <div class="text">
+                <h2 style="font-size: 50px; color:black"><b>SELAMAT DATANG</b></h2>
+                  <div class="card bg-transparant" >
+                    <!-- <div class="card-body login-card-body bg-transparant" > -->
+                    <h3><b>SIRIKNA</b></h3>
+                    <p>Sistem Informasi Arsip Berkas Pendataan <br> Badan Pendapatan Daerah Kota Makassar</p>
+                    
+                      <form action="{{ route('login') }}" method="POST" enctype="multipart/form-data">
+                      {{ csrf_field() }}
+                        <div class="input-group mb-3">
+                            <input name="email" type="email" class="form-control" placeholder="Username / Id">
+                            <div class="input-group-append">
+                            <div class="input-group-text">
+                              <span class="fas fa-user"></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="input-group mb-3">
+                          <input name="password" type="password" class="form-control" placeholder="Password">
+                          <div class="input-group-append">
+                            <div class="input-group-text">
+                              <span class="fas fa-lock"></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <!-- /.col -->
+                          <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block" style= "background-color: #fff; color:black; border: 1px solid rgba(0,0,0,.125)">LOGIN</button>
+                          </div>
+                          <!-- /.col -->
+                        </div>
+                      </form>
+                  </div>
+                <!-- </div> -->
+            </div>
+            
+        </section>
+    </main>
+    <div class="footer-copyright text-center py-3 bg-dark" style="color:white">© 2020 : Pendataan Bapenda Kota Makassar
+    </div>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="assets/js/stylish-portfolio.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="assets/js/smoothproducts.min.js"></script>
+    <script src="assets/js/theme.js"></script>
 </body>
 
 </html>
