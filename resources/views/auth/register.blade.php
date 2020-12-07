@@ -31,7 +31,7 @@
       <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
       {{ csrf_field() }}
         <div class="input-group mb-3">
-          <input name="name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" placeholder="Full name" value="{{old('name') }}">
+          <input name="username" type="text" class="form-control {{ $errors->has('username') ? 'is-invalid' : '' }}" placeholder="Full name" value="{{old('username') }}">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user">
@@ -39,14 +39,14 @@
             </div>
           </div>
           </input>  
-          @if ($errors->has('name'))
+          @if ($errors->has('username'))
               <div class="invalid-feedback">
-              {{ $errors->first('name') }}
+              {{ $errors->first('username') }}
               </div>
           @endif
         </div>
         
-        <div class="input-group mb-3">
+        <!-- <div class="input-group mb-3">
           <input name="email" type="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="Email" value="{{old('email') }}">
           <div class="input-group-append">
             <div class="input-group-text">
@@ -60,7 +60,7 @@
                 {{ $errors->first('email') }}
                 </div>
             @endif
-        </div>
+        </div> -->
 
         <div class="input-group mb-3">
           <input name="password" type="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" placeholder="Password" >

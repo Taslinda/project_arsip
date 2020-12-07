@@ -9,17 +9,17 @@ class AuthController extends Controller
 {
     public function getLogin()
     {
-        return view('auth.login');
+        return view('layouts.master');
     }
 
      public function postLogin(Request $request)
     {
-       if(!auth()->attempt(['email' => $request->email, 'password' => $request->password])){
+       if(!auth()->attempt(['username' => $request->username, 'password' => $request->password])){
            return redirect()->back();
        }
        return redirect()->route('dashboard');
     }
-
+   
     public function getRegister()
     {
         return view('auth.register');
@@ -42,9 +42,4 @@ class AuthController extends Controller
         return redirect()->route('login');
     }
 
-    public function logout()
-    {
-        auth()->logout();
-        return redirect()->route('login');
-    }
 }

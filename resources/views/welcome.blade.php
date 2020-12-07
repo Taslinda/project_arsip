@@ -19,13 +19,28 @@
     ::placeholder {
       color: #bdc3c7 !important;
     }
-
+    
     .bg-transparant {
       background: rgba(106, 116, 119, 0.315);
       padding: 40px 25px 50px 25px !important;
       border-radius: 10px;
       margin-left: 15px;
       margin-right: 15px;
+    }
+    
+    @media (max-width: 800px){
+      img, svg {
+      vertical-align: middle;
+      margin-left: 8rem;
+      width: 30%;
+      }
+      button.btn.btn-primary.btn-block{
+          width: 5rem;
+      }
+    }
+
+    a.navbar-brand.logo{
+      margin-left: -8rem;
     }
     </style>
 
@@ -35,7 +50,7 @@
     <nav style= "background-color:#8B0000" class="navbar navbar-expand-lg fixed-top  clean-navbar">
         <div class="container" >
             <a class="navbar-brand logo" href="#">
-             <img src="assets/img/logo bapenda.png" alt="" width="20%"  >
+             <img src="assets/img/logo bapenda.png" alt="" width="21%" >
             </a>
         </div>
     </nav>
@@ -48,10 +63,10 @@
                     <h3><b>SIRIKNA</b></h3>
                     <p>Sistem Informasi Arsip Berkas Pendataan <br> Badan Pendapatan Daerah Kota Makassar</p>
                     
-                      <form action="{{ route('login') }}" method="POST" enctype="multipart/form-data">
-                      {{ csrf_field() }}
+                      <form action="{{ route('dashboard') }}" method="POST" enctype="multipart/form-data">
+                      @csrf
                         <div class="input-group mb-3">
-                            <input name="email" type="email" class="form-control" placeholder="Username / Id">
+                            <input name="username" type="username" class="form-control" placeholder="Username / Id">
                             <div class="input-group-append">
                             <div class="input-group-text">
                               <span class="fas fa-user"></span>

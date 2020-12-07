@@ -179,14 +179,10 @@ Route::group(['middleware' => ['auth']], function () {
 
 Route::get('/register','AuthController@getRegister')->name('register')->middleware('guest');
 Route::post('/register','AuthController@postRegister')->middleware('guest');
-Route::get('/login','AuthController@getLogin')->middleware('guest')->name('login');
-Route::post('/login','AuthController@postLogin')->middleware('guest');
 
-Route::get('/logout', 'AuthController@logout')->middleware('auth')->name('logout');
+Route::get('/dashboard','MasterController@getDashboard')->middleware('guest')->name('dashboard');
+Route::post('/dashboard','MasterController@postDashboard')->middleware('guest');
 
-Route::get('/dashboard',function(){
-    return view('layouts.master');
-})->middleware('auth')->name('dashboard');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
