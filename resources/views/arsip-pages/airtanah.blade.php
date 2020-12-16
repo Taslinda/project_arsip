@@ -12,6 +12,19 @@
     <link rel="stylesheet" href="{{ asset('frontend') }}/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('frontend') }}/dist/css/adminlte.min.css">
+
+    <style type="text/css">
+       @media screen and (max-width: 750px) {
+           .content-wrapper{
+               width: fit-content;
+           }
+           .card-body.table{
+               font-size:20px;
+               overflow:auto;
+           }
+       }
+    </style>
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -74,7 +87,7 @@
                     <div class="card-header">
                         <h3 class="card-title">Arsip Pendataan Air Bawah Tanah</h3>
                     </div>
-
+                    
                     <div class="card-body p-0">
                         <table class="table table-striped projects">
                             <thead>
